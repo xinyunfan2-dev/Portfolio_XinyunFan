@@ -1,0 +1,222 @@
+% !TEX program = xelatex
+\documentclass[11pt,a4paper]{article}
+
+% ==================== PACKAGES ====================
+\usepackage[margin=0.6in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+
+% ==================== COLORS ====================
+\definecolor{primary}{RGB}{33, 37, 41}
+
+% ==================== FONTS ====================
+\IfFontExistsTF{Times New Roman}
+  {\setmainfont{Times New Roman}}
+  {\setmainfont{TeX Gyre Termes}}
+
+\IfFontExistsTF{FandolSong-Regular}
+  {\setCJKmainfont{FandolSong-Regular}}
+  {\setCJKmainfont{Songti SC}}
+
+% ==================== PAGE SETTINGS ====================
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\urlstyle{same}
+\raggedbottom
+\linespread{1.04}
+
+% ==================== BULLET SETTINGS ====================
+\setlist[itemize]{
+  leftmargin=1.2em,
+  label=\small\textbullet,
+  itemsep=1pt,
+  topsep=1pt,
+  parsep=0pt,
+  partopsep=0pt,
+  before=\raggedright,
+  after=\vspace{1.5pt}
+}
+
+% ==================== SECTION SETTINGS ====================
+\titleformat{\section}
+  {\large\bfseries\color{primary}}
+  {}
+  {0pt}
+  {}
+  [\vspace{-4pt}\rule{\textwidth}{0.8pt}]
+
+\titlespacing*{\section}
+  {0pt}
+  {8pt}
+  {4pt}
+
+
+% ==================== CUSTOM COMMANDS ====================
+
+\newcommand{\educationHeading}[4]{
+  \begin{tabularx}{\textwidth}{
+    @{}X>{\raggedleft\arraybackslash}p{0.3\textwidth}@{}
+  }
+    \textbf{#1} & \textbf{#2} \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}
+  \vspace{-1.5pt}
+}
+
+\newcommand{\projectHeading}[3]{
+  \begin{tabularx}{\textwidth}{
+    @{}X>{\raggedleft\arraybackslash}p{0.25\textwidth}@{}
+  }
+    \textbf{#1} \enspace\textbar{}\enspace \small\textit{#2} & \small #3
+  \end{tabularx}
+  \vspace{-2pt}
+}
+
+
+% ==================== DOCUMENT ====================
+
+\begin{document}
+
+
+% ==================== HEADER ====================
+
+\begin{center}
+  {\Huge\bfseries Xinyun FAN}\\[6pt]
+
+  \small
+  Hong Kong SAR
+  \enspace\textbullet\enspace
+  \href{mailto:xinyun.f@outlook.com}{xinyun.f@outlook.com}
+  \enspace\textbullet\enspace
+  +852 8495 3602
+  \enspace\textbullet\enspace
+  \href{https://github.com/xinyunfan2-dev}{GitHub}
+  \enspace\textbullet\enspace
+  \href{https://www.linkedin.com/in/xinyun-fan-39a0033a8/}{LinkedIn}
+  \enspace\textbullet\enspace
+  \href{https://www.kaggle.com/shuminghao}{Kaggle}
+  \enspace\textbullet\enspace
+  \href{https://leetcode.cn/u/adoring-montalcinixex/}{LeetCode}
+\end{center}
+
+\vspace{-6pt}
+
+
+% ==================== EDUCATION ====================
+
+\section{Education}
+
+\educationHeading
+  {City University of Hong Kong}
+  {Hong Kong SAR}
+  {Bachelor of Science in Computer Science; Minor in Mathematics}
+  {Expected 2029}
+
+\begin{itemize}
+  \item Cumulative GPA: \textbf{3.84/4.30}.
+  \item Dean's List (Semester A \& B, 2025/26).
+  \item Full Scholarship recipient and Tiger Programme student.
+  \item Relevant coursework: Linear Algebra, Calculus, Computational Probability Modeling, Business Statistics, and Data Structures \& Algorithms.
+\end{itemize}
+
+
+% ==================== RESEARCH INTERESTS ====================
+
+\section{Research Interests}
+
+Machine Learning, Deep Learning, Data Science, Applied AI
+
+
+% ==================== PROJECTS ====================
+
+\section{Selected Projects}
+
+
+% ---------- TITANIC ----------
+
+\projectHeading
+  {Titanic Survival Prediction}
+  {Python, Pandas, scikit-learn, XGBoost}
+  {\href{https://www.kaggle.com/shuminghao}{Kaggle}}
+
+\begin{itemize}
+  \item Built an end-to-end classification workflow covering EDA, missing-value handling, feature engineering, and model evaluation.
+  \item Conducted experiments with Random Forest and XGBoost models to analyze feature impact and improve predictive performance.
+\end{itemize}
+
+
+% ---------- HOUSE PRICE ----------
+
+\projectHeading
+  {House Price Prediction}
+  {Python, Pandas, scikit-learn, XGBoost}
+  {\href{https://www.kaggle.com/shuminghao}{Kaggle}}
+
+\begin{itemize}
+  \item Built an end-to-end regression workflow including data preprocessing, feature engineering, categorical encoding, and model evaluation.
+  \item Compared regression models using cross-validation and analyzed performance improvements.
+\end{itemize}
+
+
+% ---------- BRIDGECARE ----------
+
+\projectHeading
+  {BridgeCare --- AI Agent for Social Welfare Services}
+  {TypeScript, LLM APIs, Vercel}
+  {\href{https://github.com/xinyunfan2-dev/BridgeCare-Team18-Gr}{GitHub}}
+
+\begin{itemize}
+  \item Led a team in developing an AI-agent solution designed to streamline welfare applications for vulnerable groups.
+  \item Contributed to the end-to-end product workflow, including web development, LLM API integration, testing, and deployment.
+  \item Selected as a \textbf{Top 8 finalist} at the \textbf{GDGoC Hackathon 2026 --- Build with Agentic AI}.
+\end{itemize}
+
+
+% ---------- VERIHK ----------
+
+\projectHeading
+  {VeriHK --- Hong Kong ICT Competition 2026 Entry}
+  {TypeScript}
+  {\href{https://github.com/xinyunfan2-dev/VeriHK-HKICT}{GitHub}}
+
+\begin{itemize}
+  \item Developed a TypeScript web application submitted to the \textbf{Hong Kong ICT Competition 2026}.
+  \item Applied full-stack development workflow including implementation, API configuration, version control, and deployment.
+\end{itemize}
+
+
+% ==================== TECHNICAL SKILLS ====================
+
+\section{Technical Skills}
+
+\small
+\begin{tabular}{@{}p{0.26\textwidth} p{0.74\textwidth}@{}}
+
+\textbf{Programming:} &
+Python, C++, JavaScript, TypeScript \\[1pt]
+
+\textbf{Data Science \& ML:} &
+Pandas, NumPy, scikit-learn, XGBoost, Matplotlib, Seaborn \\[1pt]
+
+\textbf{AI \& Development:} &
+LLM APIs, Prompt Engineering, Supabase, Vercel \\[1pt]
+
+\textbf{Tools:} &
+Git, Jupyter Notebook, VS Code, Linux \\[1pt]
+
+\textbf{Algorithms:} &
+Data Structures \& Algorithms, LeetCode (90+ problems)
+
+\end{tabular}
+\normalsize
+
+
+\end{document}
