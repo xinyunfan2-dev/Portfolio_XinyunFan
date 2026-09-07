@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
-    Palatino, Georgia, serif;
-  --font-sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  --font-serif:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia,
+    serif;
+
+  --font-sans:
+    "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 :root {
@@ -14,6 +16,7 @@
   --muted: #72736f;
   --line: #deded9;
   --soft: #efefeb;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -44,10 +47,12 @@ body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
+
   background-image: url("./assets/andrew-kliatskyi-9l_R8EBQ7-c-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   filter: invert(1) grayscale(1) contrast(0.8);
   opacity: 0.1;
 }
@@ -92,8 +97,247 @@ p {
   line-height: 1.7;
 }
 
+/* ==================== INTERACTIONS ==================== */
+
+.interactive-button,
+.interactive-link,
+.nav-motion-link,
+.blog-card-motion {
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    opacity 220ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.interactive-button:hover,
+.interactive-button:focus-visible {
+  transform: translateY(-2px) scale(1.035);
+}
+
+.interactive-link:hover,
+.interactive-link:focus-visible,
+.nav-motion-link:hover,
+.nav-motion-link:focus-visible {
+  transform: translateY(-1px) scale(1.045);
+}
+
+.interactive-button:active,
+.interactive-link:active,
+.nav-motion-link:active {
+  transform: translateY(0) scale(0.985);
+  transition-duration: 100ms;
+}
+
+.nav-motion-link {
+  display: inline-block;
+  transform-origin: center;
+}
+
+.blog-card-motion:hover,
+.blog-card-motion:focus-visible {
+  position: relative;
+  z-index: 1;
+  transform: translateY(-2px) scale(1.008);
+}
+
+.interactive-button:focus-visible,
+.interactive-link:focus-visible,
+.nav-motion-link:focus-visible,
+.blog-card-motion:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  outline-offset: 4px;
+}
+
+/* ==================== ROADMAP CARDS ==================== */
+
+.roadmap-card {
+  --roadmap-card-collapsed-height: 10.5rem;
+  --roadmap-card-expanded-height: 22rem;
+
+  height: var(--roadmap-card-collapsed-height);
+  outline: none;
+  transform: translateY(0) scale(1);
+  transform-origin: center top;
+  will-change: height, transform;
+
+  transition:
+    height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-card__details {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(0.75rem);
+
+  transition:
+    max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease 70ms,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-card:hover,
+.roadmap-card:focus-within {
+  z-index: 2;
+  height: var(--roadmap-card-expanded-height);
+  border-color: #c8c9c3;
+  background: var(--soft);
+  box-shadow: 0 18px 42px rgb(41 41 39 / 0.09);
+  transform: translateY(-5px) scale(1.012);
+}
+
+.roadmap-card:hover .roadmap-card__details,
+.roadmap-card:focus-within .roadmap-card__details {
+  max-height: 18rem;
+  margin-top: 1.25rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roadmap-card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  outline-offset: 4px;
+}
+
+/* ==================== PROJECT CARD ==================== */
+
+.project-card {
+  --project-card-collapsed-height: 25.5rem;
+  --project-card-expanded-height: 32rem;
+
+  height: var(--project-card-collapsed-height);
+  outline: none;
+  transform: translateY(0) scale(1);
+  transform-origin: center top;
+  will-change: height, transform;
+
+  transition:
+    height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 卡片左侧的动态细线 */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 0;
+
+  width: 3px;
+  border-radius: 999px;
+  background: var(--ink);
+
+  opacity: 0;
+  transform: scaleY(0.35);
+  transform-origin: center;
+
+  transition:
+    opacity 300ms ease,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Project details are revealed by hover, keyboard focus, or a tap on the card. */
+.project-card__details {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(0.75rem);
+
+  transition:
+    max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 260ms ease 70ms,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  z-index: 2;
+  height: var(--project-card-expanded-height);
+  border-color: #c8c9c3;
+  background: var(--soft);
+  box-shadow: 0 18px 42px rgb(41 41 39 / 0.09);
+  transform: translateY(-5px) scale(1.012);
+}
+
+.project-card:hover::before,
+.project-card:focus-within::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.project-card:hover .project-card__details,
+.project-card:focus-within .project-card__details {
+  max-height: 24rem;
+  margin-top: 1.25rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--ink) 55%, transparent);
+  outline-offset: 4px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
 @media (max-width: 640px) {
   .eyebrow {
     letter-spacing: 0.12em;
+  }
+
+  .project-card {
+    --project-card-collapsed-height: 30rem;
+    --project-card-expanded-height: 38rem;
+  }
+
+  .project-card:hover .project-card__details,
+  .project-card:focus-within .project-card__details {
+    max-height: 30rem;
+    margin-top: 1.25rem;
+  }
+
+  .roadmap-card {
+    --roadmap-card-collapsed-height: 12rem;
+    --roadmap-card-expanded-height: 26rem;
+  }
+
+  .roadmap-card:hover .roadmap-card__details,
+  .roadmap-card:focus-within .roadmap-card__details {
+    max-height: 22rem;
+  }
+}
+
+/* 减少动画：尊重用户的系统设置 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .project-card,
+  .project-card::before,
+  .project-card__details,
+  .interactive-button,
+  .interactive-link,
+  .nav-motion-link,
+  .blog-card-motion,
+  .roadmap-card,
+  .roadmap-card__details {
+    transition-duration: 0.01ms;
   }
 }

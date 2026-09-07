@@ -23,10 +23,11 @@ function Projects() {
         Featured Work
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-12 md:mt-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-6 md:gap-8 mt-12 md:mt-14">
         <ProjectCard
           title="BridgeCare"
           description="AI Agent for Social Welfare Applications"
+          details="Led the development of an AI-agent solution designed to streamline welfare applications for vulnerable groups, covering interface development, LLM integration, testing, and deployment."
           tags={["AI Agent", "React", "TypeScript", "LLM"]}
           number="01"
           types="AI Project"
@@ -36,6 +37,7 @@ function Projects() {
         <ProjectCard
           title="VeriHK"
           description="AI-powered Hong Kong Data Verification Platform"
+          details="Built a full-stack verification platform with a TypeScript interface, API integration, version-controlled development, testing, and production deployment."
           tags={["AI", "Computer Vision", "TypeScript", "Web App"]}
           number="02"
           types="AI Project"
@@ -49,6 +51,7 @@ function Projects() {
   exploring passenger survival prediction
   using Kaggle dataset.
   "
+          details="Explored passenger survival through data cleaning, missing-value handling, feature engineering, cross-validation, and classification model comparison."
           tags={["Python", "Pandas", "Scikit-learn", "Machine Learning"]}
           number="03"
           types="Machine Learning"
@@ -58,6 +61,7 @@ function Projects() {
         <ProjectCard
           title="House Prices Prediction"
           description="Machine learning regression project exploring house price prediction through data analysis, feature engineering, and model optimization."
+          details="Developed a regression workflow covering exploratory analysis, categorical encoding, feature engineering, cross-validation, and model evaluation with XGBoost."
           tags={["Python", "Pandas", "Scikit-learn", "XGBoost"]}
           number="04"
           types="Machine Learning"

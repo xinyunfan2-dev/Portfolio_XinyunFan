@@ -41,6 +41,8 @@ function BlogPost() {
       <Link
         to="/#blog"
         className="
+    interactive-link
+    inline-block
     text-sm
     tracking-[0.14em]
     text-[var(--muted)]
@@ -49,7 +51,6 @@ function BlogPost() {
     pb-1
     hover:text-black
     hover:border-black
-    transition
   "
       >
         Back to Blog

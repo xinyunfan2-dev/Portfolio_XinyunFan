@@ -79,7 +79,7 @@ function Blog() {
           <Link
             key={post.slug}
             to={`/blog/${post.slug}`}
-            className="block px-5 sm:px-6 py-6 md:py-7 border-b border-[var(--line)] last:border-b-0 hover:bg-[var(--surface)] transition duration-300"
+            className="blog-card-motion block px-5 sm:px-6 py-6 md:py-7 border-b border-[var(--line)] last:border-b-0 hover:bg-[var(--surface)]"
           >
             <article>
               <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] gap-4 sm:gap-10">

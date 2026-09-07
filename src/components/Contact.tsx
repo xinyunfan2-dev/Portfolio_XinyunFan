@@ -45,7 +45,7 @@ function Contact() {
             href={href}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noreferrer" : undefined}
-            className="group inline-flex items-center gap-3 py-0.5 text-sm text-[var(--muted)] transition hover:text-[var(--ink)]"
+            className="interactive-link group inline-flex items-center gap-3 py-0.5 text-sm text-[var(--muted)] hover:text-[var(--ink)]"
           >
             <Icon size={17} aria-hidden="true" />
             <span className="border-b border-transparent pb-0.5 transition group-hover:border-[var(--line)]">
@@ -57,7 +57,7 @@ function Contact() {
         <a
           href="/resume.pdf"
           download
-          className="mt-3 inline-flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-xs tracking-[0.06em] transition hover:border-[#c8c9c3]"
+          className="interactive-button mt-3 inline-flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-xs tracking-[0.06em] hover:border-[#c8c9c3]"
         >
           <FiDownload size={15} aria-hidden="true" />
           Download Résumé
