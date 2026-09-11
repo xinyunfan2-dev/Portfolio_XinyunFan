@@ -153,8 +153,8 @@ function RoadmapColumn({
   stages,
 }: RoadmapColumnProps) {
   return (
-    <article className="roadmap-column flex flex-col">
-      <header className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-7 lg:min-h-[300px]">
+    <article className="roadmap-column">
+      <header className="border-b border-[var(--line)] pb-7 lg:min-h-[220px]">
         <p className="text-sm text-[var(--muted)]">{label}</p>
         <h3 className="section-heading mt-4 text-3xl font-serif text-[var(--ink)]">
           {title}
@@ -164,39 +164,28 @@ function RoadmapColumn({
         </p>
       </header>
 
-      <div className="mt-4 grid flex-1 gap-4">
+      <ol className="roadmap-line mt-8">
         {stages.map((stage) => (
-          <section
+          <li
             key={stage.index}
-            tabIndex={0}
-            className="roadmap-card relative overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 sm:p-6"
+            className="roadmap-line__item"
           >
-            <div className="flex items-start justify-between gap-5">
-              <span className="font-serif text-xl text-[var(--ink)]">
-                {stage.index}
-              </span>
-              <span className="text-right text-xs tracking-[0.04em] text-[var(--muted)]">
-                {stage.period}
-              </span>
-            </div>
+            <span className="roadmap-line__dot" aria-hidden="true" />
 
-            <h4 className="mt-4 text-xl font-serif leading-snug text-[var(--ink)] sm:text-2xl">
+            <p className="text-xs tracking-[0.04em] text-[var(--muted)]">
+              {stage.index} · {stage.period}
+            </p>
+
+            <h4 className="mt-2 text-xl font-serif leading-snug text-[var(--ink)] sm:text-2xl">
               {stage.title}
             </h4>
 
-            <div className="roadmap-card__details">
-              <p className="editorial-copy text-sm text-[var(--muted)]">
-                {stage.focus}
-              </p>
-
-              <p className="mt-4 border-t border-[var(--line)] pt-3 text-sm leading-relaxed text-[var(--ink)]">
-                <span className="mr-2 text-[var(--muted)]">Outcome:</span>
-                {stage.outcome}
-              </p>
-            </div>
-          </section>
+            <p className="editorial-copy mt-2 text-sm text-[var(--muted)]">
+              {stage.outcome}
+            </p>
+          </li>
         ))}
-      </div>
+      </ol>
     </article>
   );
 }
@@ -246,7 +235,7 @@ function Skills() {
           Two Roadmaps for 2026/27
         </h3>
 
-        <div className="mt-9 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+        <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           <RoadmapColumn
             label="Research · 2026/27"
             title="Wireless Time-Series Forecasting"
