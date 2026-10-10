@@ -10,12 +10,12 @@
 }
 
 :root {
-  --page: #f7f7f5;
-  --surface: #fcfcfa;
+  --page: #f1ebe2;
+  --surface: #f7f1e8;
   --ink: #292927;
-  --muted: #72736f;
-  --line: #deded9;
-  --soft: #efefeb;
+  --muted: #6f6b65;
+  --line: #d7cdbf;
+  --soft: #e8dfd3;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,12 +52,14 @@ body {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.46;
+  mix-blend-mode: multiply;
+  opacity: 0.38;
 }
 
 @media (max-width: 640px) {
   #top::before {
     background-position: center bottom;
+    opacity: 0.22;
   }
 }
 
