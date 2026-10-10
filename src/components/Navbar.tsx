@@ -8,8 +8,9 @@ function Navbar() {
           </a>
         </div>
 
-        <div className="flex basis-full justify-between gap-x-3 gap-y-3 text-sm text-[var(--muted)] sm:basis-auto sm:justify-start sm:gap-7">
+        <div className="flex basis-full flex-wrap gap-x-5 gap-y-3 text-sm text-[var(--muted)] sm:basis-auto sm:justify-start sm:gap-7">
           <a href="#about" className="nav-motion-link">About</a>
+          <a href="#experience" className="nav-motion-link">Experience</a>
           <a href="#projects" className="nav-motion-link">Projects</a>
           <a href="#blog" className="nav-motion-link">Blogs</a>
           <a href="#skills" className="nav-motion-link">Skills</a>

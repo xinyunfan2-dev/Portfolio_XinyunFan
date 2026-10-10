@@ -67,7 +67,7 @@ function Blog() {
       "
     >
       <p className="eyebrow text-xs sm:text-sm text-[var(--muted)]">
-        03 / Blog
+        04 / Blog
       </p>
 
       <h2 className="section-heading mt-4 text-4xl sm:text-5xl font-serif">

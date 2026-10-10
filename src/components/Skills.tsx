@@ -1,6 +1,5 @@
 type RoadmapStage = {
   index: string;
-  period: string;
   title: string;
   focus: string;
   outcome: string;
@@ -13,105 +12,105 @@ type RoadmapColumnProps = {
   stages: RoadmapStage[];
 };
 
-const researchRoadmap: RoadmapStage[] = [
+const financialRoadmap: RoadmapStage[] = [
   {
     index: "01",
-    period: "7–13 Sep 2026",
-    title: "Data foundations",
+    title: "Research framing",
     focus:
-      "Python, NumPy, Pandas, timestamps, resampling, rolling windows, missing data, visualisation, Git and Shell.",
-    outcome: "WiFi EDA notebook, cleaned RSSI data and an initial set of plots.",
+      "Define financial distress, choose a prediction horizon and establish a chronological evaluation protocol before selecting models.",
+    outcome:
+      "A precise research question, distress label, prediction horizon and leakage-safe experiment plan.",
   },
   {
     index: "02",
-    period: "14–20 Sep 2026",
-    title: "Time-series baselines",
+    title: "Data and financial signals",
     focus:
-      "Chronological splits, leakage, look-back windows, forecast horizons, seasonality, MAE and RMSE; then persistence, moving average and seasonal-naive models.",
-    outcome: "A leakage-safe baseline pipeline and the first model comparison table.",
+      "Prepare company-level financial statements, ratios, trends, missing values and time-dependent signals in a reproducible pipeline.",
+    outcome:
+      "A documented modelling dataset with clear feature definitions and time-aware splits.",
   },
   {
     index: "03",
-    period: "21 Sep–4 Oct 2026",
-    title: "Deep forecasting and proposal",
+    title: "Baselines and class imbalance",
     focus:
-      "PyTorch training workflows, sliding windows, DLinear, TimesNet and iTransformer, alongside research questions, related work and experimental design.",
-    outcome: "Preliminary results, a complete proposal, README and short demo.",
+      "Build interpretable logistic regression and tree-based baselines while testing class weighting, resampling and decision thresholds.",
+    outcome:
+      "A trustworthy baseline table that reflects the rarity and cost of missed distress cases.",
   },
   {
     index: "04",
-    period: "Oct 2026–Jan 2027",
-    title: "Wireless measurement system",
+    title: "Forecasting models",
     focus:
-      "RSSI and dBm, latency, jitter, packet loss and throughput; Raspberry Pi, Linux, SSH, NTP, systemd, logging and offline caching.",
-    outcome: "A reliable multi-probe collection system with monitoring and recovery.",
+      "Compare XGBoost and temporal models under identical chronological splits, look-back windows and forecasting horizons.",
+    outcome:
+      "A fair comparison of statistical, machine-learning and time-aware forecasting approaches.",
   },
   {
     index: "05",
-    period: "Jan–Apr 2027",
-    title: "Multivariate model experiments",
+    title: "Evaluation and explainability",
     focus:
-      "Linear models, Random Forest, XGBoost and deep forecasters with shared data splits, external covariates, multi-site signals, ablations and optional spatial modelling.",
-    outcome: "A fair multi-site study of accuracy, stability and computational cost.",
+      "Evaluate recall, precision-recall AUC, calibration and early-warning lead time; examine important financial signals and model errors.",
+    outcome:
+      "An explainable evaluation showing when the model warns early, where it fails and why.",
   },
   {
     index: "06",
-    period: "Apr–Jun 2027",
-    title: "Evaluation and communication",
+    title: "Research output",
     focus:
-      "Rolling-origin evaluation, multiple seeds, failure analysis and peak-time performance, followed by dashboard design and academic writing.",
-    outcome: "A reproducible repository, live dashboard, poster and final report.",
+      "Run ablations and robustness checks, document limitations and package the work for clear academic communication.",
+    outcome:
+      "A reproducible repository, research report, presentation and concise visual summary.",
   },
 ];
 
-const productRoadmap: RoadmapStage[] = [
+const sayloRoadmap: RoadmapStage[] = [
   {
     index: "P0",
-    period: "1–2 weeks",
-    title: "Hackathon loop",
+    title: "Product foundation",
     focus:
-      "Build one complete Hong Kong restaurant and café flow: join a Room, find shared time, suggest an activity, complete it and generate a Moment.",
-    outcome: "A focused demo that reuses each shared experience as context for the next plan.",
+      "Establish a coherent iOS product foundation across the main app, keyboard extension, onboarding and visual identity.",
+    outcome:
+      "A coherent Saylo identity across the main app, keyboard, onboarding and product language.",
   },
   {
     index: "P1",
-    period: "6–8 weeks",
-    title: "Private multi-room MVP",
+    title: "Voice-to-text foundation",
     focus:
-      "Recoverable accounts, invitations, multiple Rooms, editable availability, plan states, saved places and Room-only Moments with photos and feedback.",
-    outcome: "A private product that a small group can use repeatedly in real life.",
+      "Strengthen microphone capture in the host app, streaming speech recognition and the shared job flow between the app and keyboard extension.",
+    outcome:
+      "A dependable voice-to-text flow that starts from the keyboard and returns usable text to any input field.",
   },
   {
     index: "P2",
-    period: "4–6 weeks",
-    title: "Trustworthy agent",
+    title: "Style-aware rewriting",
     focus:
-      "Structure every source with its URL, extraction time, validity and confidence; combine retrieval, preference ranking and explainable recommendations.",
-    outcome: "Recommendations that distinguish verified facts, recent experiences and items to confirm.",
+      "Turn raw speech into natural, work, email and social styles, with structure controls for paragraphs, points and focus-first writing.",
+    outcome:
+      "Multilingual speech becomes clean, context-appropriate writing without leaving the current app.",
   },
   {
     index: "P3",
-    period: "6–8 weeks",
-    title: "Apps and Mini Program",
+    title: "Keyboard and app handoff",
     focus:
-      "React Native with Expo for iOS and Android, Taro for WeChat, plus notifications, deep links, maps, calendars, offline caching and privacy controls.",
-    outcome: "TestFlight, Google Play testing and a WeChat Mini Program preview.",
+      "Improve app-to-keyboard transitions, shared state, failure recovery and background readiness across supported iOS versions.",
+    outcome:
+      "A resilient experience that recovers clearly from permissions, interruptions and incomplete voice jobs.",
   },
   {
     index: "P4",
-    period: "After retention",
-    title: "Faceless community beta",
+    title: "Languages, presets and history",
     focus:
-      "Let people deliberately publish privacy-safe copies of Moments with discovery, saving, reporting, blocking and moderation—but no private messages or open comments yet.",
-    outcome: "A useful public discovery layer without exposing private Rooms or schedules.",
+      "Connect language preferences, custom presets and real rewrite history to the same settings shared by the app and keyboard.",
+    outcome:
+      "Saylo adapts to how each person speaks and writes while keeping their workflow consistent.",
   },
   {
     index: "P5",
-    period: "Long-term",
-    title: "Annual memories",
+    title: "Product readiness",
     focus:
-      "Turn accumulated Plans, Moments and feedback into maps, statistics, favourite places, best-value experiences and memories still waiting to happen.",
-    outcome: "An emotional recap created naturally from real shared-life history.",
+      "Finish device testing, privacy explanations, onboarding, icons, subscription boundaries and App Store preparation.",
+    outcome:
+      "A polished TestFlight beta ready for real users and structured feedback before launch.",
   },
 ];
 
@@ -173,7 +172,7 @@ function RoadmapColumn({
             <span className="roadmap-line__dot" aria-hidden="true" />
 
             <p className="text-xs tracking-[0.04em] text-[var(--muted)]">
-              {stage.index} · {stage.period}
+              {stage.index}
             </p>
 
             <h4 className="mt-2 text-xl font-serif leading-snug text-[var(--ink)] sm:text-2xl">
@@ -197,7 +196,7 @@ function Skills() {
       className="max-w-6xl mx-auto px-6 sm:px-8 py-20 md:py-28 border-t border-[var(--line)]"
     >
       <p className="eyebrow text-xs sm:text-sm text-[var(--muted)]">
-        04 / Skills
+        05 / Skills
       </p>
 
       <h2 className="section-heading mt-4 text-4xl sm:text-5xl font-serif">
@@ -232,22 +231,22 @@ function Skills() {
         <p className="text-sm text-[var(--muted)]">Currently building</p>
 
         <h3 className="section-heading mt-3 max-w-3xl text-3xl font-serif sm:text-4xl">
-          Two Roadmaps for 2026/27
+          Two Roadmaps
         </h3>
 
         <div className="mt-10 grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-start lg:gap-16">
           <RoadmapColumn
-            label="Research · 2026/27"
-            title="Wireless Time-Series Forecasting"
-            description="A project-led path from public WiFi data to reliable wireless measurements, multivariate forecasting and a reproducible research study."
-            stages={researchRoadmap}
+            label="Research roadmap"
+            title="Financial Distress Forecasting"
+            description="A research path from well-defined distress labels and financial signals to leakage-safe forecasting, explainable evaluation and a reproducible study."
+            stages={financialRoadmap}
           />
 
           <RoadmapColumn
-            label="Software product"
-            title="AI Shared-Life Planner"
-            description="Build the private shared-life space first. Add a public, faceless experience community only after the private planning loop shows real retention."
-            stages={productRoadmap}
+            label="Product roadmap"
+            title="Saylo"
+            description="Build Saylo as an iOS AI voice keyboard that turns speech into structured, style-aware text across apps."
+            stages={sayloRoadmap}
           />
         </div>
       </div>

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Blog from "./components/Blogs";
 import BlogPost from "./components/BlogPost";
@@ -12,6 +13,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <Experience />
       <Projects />
       <Blog />
       <Skills />

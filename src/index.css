@@ -48,13 +48,17 @@ body {
   z-index: 0;
   pointer-events: none;
 
-  background-image: url("./assets/andrew-kliatskyi-9l_R8EBQ7-c-unsplash.jpg");
-  background-position: center;
+  background-image: url("./assets/portfolio-background.png");
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.46;
+}
 
-  filter: invert(1) grayscale(1) contrast(0.8);
-  opacity: 0.1;
+@media (max-width: 640px) {
+  #top::before {
+    background-position: center bottom;
+  }
 }
 
 #top > * {

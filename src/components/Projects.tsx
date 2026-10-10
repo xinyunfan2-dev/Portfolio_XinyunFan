@@ -16,7 +16,7 @@ function Projects() {
       "
     >
       <p className="eyebrow text-xs sm:text-sm text-[var(--muted)]">
-        02 / Selected Projects
+        03 / Selected Projects
       </p>
 
       <h2 className="mt-4 text-4xl sm:text-5xl font-serif section-heading">
